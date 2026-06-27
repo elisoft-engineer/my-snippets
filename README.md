@@ -1,73 +1,76 @@
-# React + TypeScript + Vite
+# MySnippets
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, lightweight, and keyboard-optimized snippet manager built with React and TypeScript. Easily capture, store, and copy your code snippets or text chunks instantly. Your snippets are persisted locally so you never lose them.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **⚡ Clipboard Magic:** Double-click any snippet to copy it instantly to your clipboard.
+* **🎹 Keyboard-First Workflow:** Navigate and manage entries efficiently with built-in hotkeys.
+* **💾 Local Storage Persistence:** Automatically saves your collection locally so your data stays intact across browser refreshes.
+* **✏️ Seamless CRUD Operations:** Quick creation, real-time updates, and immediate deletion of snippets.
+* **🧹 Bulk Purge:** Clear your entire board instantly using the floating purge button or a global shortcut.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+* **Framework:** React 18
+* **Language:** TypeScript
+* **Package Manager:** pnpm
+* **Icons:** Lucide React
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ⌨️ Interaction & Keyboard Shortcuts
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Make your workflow faster using the built-in interaction system:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Action | Shortcut / Trigger | Context |
+| :--- | :--- | :--- |
+| **Copy Snippet** | `Double-Click` | On any snippet card |
+| **Edit Snippet** | Press `E` | When a snippet card is focused |
+| **Delete Snippet** | Press `DEL` | When a snippet card is focused |
+| **Clear All Snippets** | Press `DEL` | Globally (when no specific input or item is focused) |
+
+---
+
+## 📦 Getting Started
+
+### Prerequisites
+
+Ensure you have [Node.js](https://nodejs.org/) and [pnpm](https://pnpm.io/) installed on your machine.
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/your-username/my-snippets.git](https://github.com/your-username/my-snippets.git)
+   cd my-snippets
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pnpm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   pnpm dev
+   ```
+
+---
+
+## 📁 Project Structure
+
+```text
+├── src/
+│   ├── App.tsx       # Core application logic, hotkeys, and UI layout
+│   ├── App.css       # Custom application styling and floating layouts
+│   └── main.tsx      # Application entry point
+├── package.json
+└── tsconfig.json
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📄 License
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This project is open-source and available under the [MIT License](LICENSE).
